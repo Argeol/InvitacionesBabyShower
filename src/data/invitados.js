@@ -17,9 +17,10 @@ export const listaInvitados = {
   },
 
   // Opción 2: Pareja
-  "carlos-y-ana": {
-    nombre: "Carlos y Ana",
-    regalo1: "Almohada Antirreflujo",
+  "Leidy-Guio": {
+    nombre: "Leidy Paola Guio Cespedes",
+    regalo1: "EL COCHE",
+    regalo2: "LA CAMA DONDE VA A DORMIR EL BEBE",
     mensajeConfirmacion: "¡Hola! Con mucho gusto confirmamos nuestra asistencia. Abrazos de Carlos y Ana.",
   }
 };
