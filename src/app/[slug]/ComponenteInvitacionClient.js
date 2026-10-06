@@ -38,12 +38,12 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
 
         {/* --- CAPAS DE TEXTO DINÁMICO (Ajusta la posición para que floten estéticos) --- */}
         <div className="absolute top-[33%] left-0 w-full text-center">
-          <h2 className="text-2xl font-bold text-[#4A4A4A] tracking-wide">
+          <h2 className="text-xl font-serif  text-[#4A4A4A] tracking-wide">
             ¡Hola, {nombre}!
           </h2>
         </div>
         <div className="absolute top-[43.5%] left-0 w-full text-center px-12 select-none">
-          <p className="text-[14px] text-[#000000] italic uppercase tracking-widest mb-2">
+          <p className="text-[14px] text-[#574d4d] font-serif uppercase tracking-widest mb-2">
             Cra 8 #41-66 Ibague Tolima
           </p>
         </div>
@@ -61,12 +61,12 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
           <div className="flex flex-col gap-1.5 justify-center items-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.45)]">
 
             {/* Primer Regalo */}
-            <span className="block max-w-[240px] text-sm font-black text-white whitespace-normal break-words leading-tight tracking-wide">
+            <span className="block max-w-[240px] text-xs font-black text-white whitespace-normal break-words leading-tight tracking-wide">
               {regalo1}
             </span>
             {/* Segundo Regalo */}
             {regalo2 && (
-              <span className="block max-w-[240px] text-sm font-black text-white whitespace-normal break-words leading-tight tracking-wide">
+              <span className="block max-w-[240px] text-xs font-black text-white whitespace-normal break-words leading-tight tracking-wide">
                 {regalo2}
               </span>
             )}
@@ -79,12 +79,12 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
 
         {/* 1. Botón de Play Azul */}
         {/* CONTENEDOR EN TUS COORDENADAS EXACTAS: TOP 22% / LEFT 47% */}
-        <div className="absolute top-[22%] left-[47%] w-[12%] aspect-square z-20">
+        <div className="absolute top-[22%] left-[48%] w-[12%] aspect-square z-20">
 
           {/* Botón táctil nativo*/}
           <div
             onClick={controlarMusica}
-            className="w-full h-full cursor-pointer rounded-full bg-blue-500/10 active:bg-white/40 transition-colors"
+            className="w-full h-full cursor-pointer rounded-full bg-redx|-500/10 active:bg-white/40 transition-colors"
             title="Reproducir Música"
           />
 

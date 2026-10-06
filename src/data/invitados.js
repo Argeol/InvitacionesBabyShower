@@ -17,7 +17,7 @@ export const listaInvitados = {
   },
 
   // Opción 2: Pareja
-  "Leidy-Guio": {
+  "leidy-guio": {
     nombre: "Leidy Paola Guio Cespedes",
     regalo1: "EL COCHE",
     regalo2: "LA CAMA DONDE VA A DORMIR EL BEBE",
