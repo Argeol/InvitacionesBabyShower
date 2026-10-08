@@ -1,26 +1,237 @@
 // src/data/invitados.js
 
 export const listaInvitados = {
-  // Invitado individual clásico
-  "esteban": {
-    nombre: "Esteban",
-    regalo1: "Pañales Etapa 2",
-    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Soy Esteban.",
-  },
-  
-  // Opción 1: Familia Completa
-  "familia-reyes": {
-    nombre: "Familia Reyes",
-    regalo1: "Pañales Etapa 3",
-    regalo2:"jabon de baño neutro",
-    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de la Familia Reyes.",
+
+  "familia-guio": {
+    nombre: "Nosotros",
+    regalo1: "Pañales Etapa 0",
+    regalo2: "Pañitos",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Nosotros.",
   },
 
-  // Opción 2: Pareja
-  "leidy-guio": {
-    nombre: "Leidy Paola Guio Cespedes",
-    regalo1: "EL COCHE",
-    regalo2: "LA CAMA DONDE VA A DORMIR EL BEBE",
-    mensajeConfirmacion: "¡Hola! Con mucho gusto confirmamos nuestra asistencia. Abrazos de Carlos y Ana.",
-  }
+  "familia-carolina": {
+    nombre: "Familia Rincon",
+    regalo1: "Pañales Etapa 1",
+    regalo2: "Bodies 3 a 6 Meses",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de la Familia Rincon.",
+  },
+
+  "familia-yolanda": {
+    nombre: "Aura Yolanda Garcia",
+    regalo1: "Terno",
+    regalo2: "Ropa 0 a 3 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Aura Yolanda Garcia.",
+  },
+
+  "esteban": {
+    nombre: "Johan Esteban Rodriguez",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Jabon de Baño Neutro",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Soy Johan Esteban Rodriguez.",
+  },
+
+  "paola": {
+    nombre: "Leidy Paola Guio",
+    regalo1: "Colchoneta Cojin Antireflujo",
+    regalo2: "Pañitos",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Leidy Paola Guio.",
+  },
+
+  "familia-arcecio-guio": {
+    nombre: "Familia Guio Cespedes",
+    regalo1: "Pañales Etapa 1",
+    regalo2: "Bodies 6 a 9 Meses",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de la Familia Guio Cespedes.",
+  },
+
+  "luz-andres": {
+    nombre: "Andres Aguillera y Tia Luz",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Bodies 3 a 6 Meses",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Andres Aguillera y Tia Luz.",
+  },
+
+  "familia-villamil": {
+    nombre: "Tia Yuri Guio y familia",
+    regalo1: "Pañales Etapa 2",
+    regalo2: "Tetero Antireflujo",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Tia Yuri Guio y familia.",
+  },
+
+  "familia-guio-pineda": {
+    nombre: "Abuelitos",
+    regalo1: "Cobija",
+    regalo2: "Semanario 0 a 3 meses",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un abrazo de los Abuelitos.",
+  },
+
+  "keiner": {
+    nombre: "Keiner Sanchez",
+    regalo1: "Pañales Etapa 2",
+    regalo2: "Pantalones 3 a 6 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Keiner Sanchez.",
+  },
+
+  "tio-jose": {
+    nombre: "Jose y Familia",
+    regalo1: "Pañales Etapa 4",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Jose y Familia.",
+  },
+
+  "tia-rosa": {
+    nombre: "Rosa Chacon",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Kit de Aseo",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Rosa Chacon.",
+  },
+
+  "tia-maria": {
+    nombre: "Maria Delia Sanchez",
+    regalo1: "Pañales Etapa 2",
+    regalo2: "Pantalones 6 a 9 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Maria Delia Sanchez.",
+  },
+
+  "laura": {
+    nombre: "Laura",
+    regalo1: "Pañales Etapa 2",
+    regalo2: "Crema N.4",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Laura.",
+  },
+
+  "murcia": {
+    nombre: "Fabian Dario Murcia",
+    regalo1: "Pañales Etapa 4",
+    regalo2: "Medias 6 a 9 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Fabian Dario Murcia.",
+  },
+
+  "mary": {
+    nombre: "Mary Gonzales",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Shampo suave",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Mary Gonzales.",
+  },
+
+  "tia-olga": {
+    nombre: "Olga Sanchez",
+    regalo1: "Pañales Etapa 4",
+    regalo2: "Medias 3 a 6 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Olga Sanchez.",
+  },
+
+  "churques": {
+    nombre: "Andres Miranda Churque",
+    regalo1: "Pañales Etapa 4",
+    regalo2: "Tina de Baño",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Andres Miranda Churque.",
+  },
+
+  "alejo": {
+    nombre: "Diego Alejandro Pinzon",
+    regalo1: "Pañales Etapa 4",
+    regalo2: "Toalla",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Diego Alejandro Pinzon.",
+  },
+
+  "juli": {
+    nombre: "Julian Alviz",
+    regalo1: "Kit de Aseo",
+    regalo2: "Pañitos",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Julian Alviz.",
+  },
+
+  "valentina": {
+    nombre: "Laura Valentina Rojas",
+    regalo1: "Pañales Etapa 2",
+    regalo2: "Toalla",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Laura Valentina Rojas.",
+  },
+
+  "liseth": {
+    nombre: "Liseth Abril",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Medias 6 a 9 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Liseth Abril.",
+  },
+
+  "danna": {
+    nombre: "Danna Marcela",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Semanario 3 a 6 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Danna Marcela.",
+  },
+
+  "tio-rafael": {
+    nombre: "Familia Sanchez",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Ropa 9 a 12 meses",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de la Familia Sanchez.",
+  },
+
+  "prima-diana": {
+    nombre: "Diana Y Isa",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Medias 9 a 12 meses",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Diana e Isa.",
+  },
+
+  "anderson": {
+    nombre: "Abuelitos Y Tios",
+    regalo1: "Bono de 150 K",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de los Abuelitos y Tios.",
+  },
+
+  "candil": {
+    nombre: "Stiven Candil",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Crema Hidratante",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Stiven Candil.",
+  },
+
+  "carmelita-jose": {
+    nombre: "Jose Peña y Carmen",
+    regalo1: "Bodies 9 a 12 meses",
+    regalo2: "Locion",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Jose Peña y Carmen.",
+  },
+
+  "tia-lucero": {
+    nombre: "Lucero Sanchez",
+    regalo1: "Semanario 3 a 6 meses",
+    regalo2: "Pañitos",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Lucero Sanchez.",
+  },
+
+  "leo": {
+    nombre: "Leonilde",
+    regalo1: "Pañales Etapa 3",
+    regalo2: "Ropa 9 a 12 meses",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Leonilde.",
+  },
+
+  "gloria-reinel": {
+    nombre: "Reinel y Esposa",
+    regalo1: "Organizador de Ropa",
+    regalo2: "Pañitos",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Reinel y Esposa.",
+  },
+
+  "tia-chavela-familia": {
+    nombre: "Tia Chavela y Familia",
+    regalo1: "Pañalera",
+    regalo2: "Pañitos",
+    mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Tia Chavela y Familia.",
+  },
+
+  "tia-ana": {
+    nombre: "Tia Ana",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Tia Ana.",
+  },
+
+  "tia-luzdary": {
+    nombre: "Tia Luzdary",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Tia Luzdary.",
+  },
+
 };

@@ -16,8 +16,7 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
   };
 
   // Codificamos el mensaje para que sea seguro meterlo en el enlace de WhatsApp
-  const whatsappUrl = `https://wa.me{encodeURIComponent(mensajeConfirmacion)}`;
-
+  const whatsappUrl = `https://wa.me/573245896760?text=${encodeURIComponent(mensajeConfirmacion)}`;
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#f4f9f9]">
 
@@ -114,7 +113,7 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
           href="https://maps.app.goo.gl/HFyVXqdHGNCT7cBF8"
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-[44.5%] left-[33%] w-[34%] h-[2.2%] rounded-[20px] bg-green-500/20 active:bg-white/40 transition-colors"
+          className="absolute top-[44.5%] left-[33%] w-[34%] h-[2.2%] rounded-[20px] active:bg-white/40 transition-colors"
           title="Ver Ubicación"
         />
 
@@ -124,7 +123,7 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-[24.5%] left-[33%] w-[34%] h-[2.5%] rounded-[20px] bg-red-500/20 active:bg-white/40 transition-colors"
+          className="absolute bottom-[24.5%] left-[33%] w-[34%] h-[2.5%] rounded-[20px] active:bg-white/40 transition-colors"
           title="Confirmar por WhatsApp"
         />
 
