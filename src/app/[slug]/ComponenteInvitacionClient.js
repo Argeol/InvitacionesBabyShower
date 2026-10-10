@@ -1,69 +1,125 @@
 'use client';
-import { useRef, useState } from 'react';
+
+import { useRef, useState, useEffect } from 'react';
+
 import ContadorRegresivo from './ContadorRegresivo';
 
-export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, mensajeConfirmacion }) {
-  const audioRef = useRef(null);
-  const [ocultarIndicador, setOcultarIndicador] = useState(false);
+export default function ComponenteInvitacionClient({
+  nombre,
+  regalo1,
+  regalo2,
+  mensajeConfirmacion
+}) {
 
-  const controlarMusica = () => {
+  const audioRef = useRef(null);
+
+  const [ocultarIndicador, setOcultarIndicador] = useState(false);
+  const [musicaReproduciendo, setMusicaReproduciendo] = useState(false);
+
+  // WhatsApp
+  const whatsappUrl = `https://wa.me/573245896760?text=${encodeURIComponent(
+    mensajeConfirmacion
+  )}`;
+
+  // Intentar reproducir automáticamente 2 segundos después de cargar
+  useEffect(() => {
+    const iniciarMusica = async () => {
+      if (!audioRef.current) return;
+
+      try {
+        await audioRef.current.play();
+
+        setMusicaReproduciendo(true);
+        setOcultarIndicador(true);
+
+      } catch (error) {
+        console.log(
+          "El navegador bloqueó la reproducción automática:",
+          error
+        );
+      }
+    };
+
+    const temporizador = setTimeout(() => {
+      iniciarMusica();
+    }, 2000);
+
+    return () => clearTimeout(temporizador);
+  }, []);
+
+  // Reproducir / pausar manualmente
+  const controlarMusica = async () => {
+    if (!audioRef.current) return;
+
     if (audioRef.current.paused) {
-      audioRef.current.play().catch(err => console.log("Bloqueo de reproducción por el navegador:", err));
-      setOcultarIndicador(true);
+
+      try {
+        await audioRef.current.play();
+
+        setMusicaReproduciendo(true);
+        setOcultarIndicador(true);
+
+      } catch (error) {
+        console.log("No se pudo reproducir la música:", error);
+      }
+
     } else {
+
       audioRef.current.pause();
+      setMusicaReproduciendo(false);
+
     }
   };
 
-  // Codificamos el mensaje para que sea seguro meterlo en el enlace de WhatsApp
-  const whatsappUrl = `https://wa.me/573245896760?text=${encodeURIComponent(mensajeConfirmacion)}`;
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#f4f9f9]">
 
-      {/* Audio oculto: cámbialo por tu archivo en public/ cuando lo tengas */}
-      <audio ref={audioRef} loop preload="auto">
+      {/* Audio */}
+      <audio
+        ref={audioRef}
+        loop
+        preload="auto"
+      >
         <source src="/Cancion.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* Contenedor Adaptable Celular */}
+      {/* Contenedor adaptable */}
       <div className="relative w-full max-w-[450px] shadow-2xl overflow-hidden bg-white">
 
-        {/* Tu imagen de Canva que actúa como lienzo de fondo */}
+        {/* Imagen */}
         <img
           src="/Invitacion.png"
           alt="Invitación Revelación"
           className="w-full block h-auto"
         />
 
-        {/* --- CAPAS DE TEXTO DINÁMICO (Ajusta la posición para que floten estéticos) --- */}
+        {/* Nombre */}
         <div className="absolute top-[33%] left-0 w-full text-center">
-          <h2 className="text-xl font-serif  text-[#4A4A4A] tracking-wide">
+          <h2 className="text-xl font-serif text-[#4A4A4A] tracking-wide">
             ¡Hola, {nombre}!
           </h2>
         </div>
+
+        {/* Dirección */}
         <div className="absolute top-[43.5%] left-0 w-full text-center px-12 select-none">
           <p className="text-[14px] text-[#574d4d] font-serif uppercase tracking-widest mb-2">
             Cra 8 #41-66 Ibague Tolima
           </p>
         </div>
 
-
-        {/* Contenedor con ancho máximo controlado para que fuerce el salto de línea */}
+        {/* Regalos */}
         <div className="absolute top-[56.35%] left-0 w-full text-center px-12 select-none">
 
-          {/* Título de la sección en blanco con sombra fina */}
           <p className="text-[14px] font-black text-white uppercase tracking-widest mb-2 drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.5)]">
             Sugerencia de regalo:
           </p>
 
-          {/* Bloque flexible para separar y estilizar los dos regalos */}
           <div className="flex flex-col gap-1.5 justify-center items-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.45)]">
 
-            {/* Primer Regalo */}
             <span className="block max-w-[240px] text-xs font-black text-white whitespace-normal break-words leading-tight tracking-wide">
               {regalo1}
             </span>
-            {/* Segundo Regalo */}
+
             {regalo2 && (
               <span className="block max-w-[240px] text-xs font-black text-white whitespace-normal break-words leading-tight tracking-wide">
                 {regalo2}
@@ -71,33 +127,29 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
             )}
 
           </div>
-
         </div>
 
-        {/* --- TUS BOTONES INTERACTIVOS MILIMÉTRICOS --- */}
+        {/* Botón de música */}
+        <div className="absolute top-[22%] left-[47.5%] w-[12%] aspect-square z-20">
 
-        {/* 1. Botón de Play Azul */}
-        {/* CONTENEDOR EN TUS COORDENADAS EXACTAS: TOP 22% / LEFT 47% */}
-        <div className="absolute top-[22%] left-[48%] w-[12%] aspect-square z-20">
-
-          {/* Botón táctil nativo*/}
           <div
             onClick={controlarMusica}
-            className="w-full h-full cursor-pointer rounded-full bg-redx|-500/10 active:bg-white/40 transition-colors"
-            title="Reproducir Música"
+            className="w-full h-full cursor-pointer rounded-full active:bg-white/40 transition-colors"
+            title={
+              musicaReproduciendo
+                ? "Pausar Música"
+                : "Reproducir Música"
+            }
           />
 
-          {/* MICROANIMACIÓN EXCLUSIVA DE PROGRAMADOR */}
-          {/* Si 'ocultarIndicador' es false, renderiza el letrero flotante con la manito */}
+          {/* Indicador */}
           {!ocultarIndicador && (
             <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 flex flex-col items-center pointer-events-none w-max animate-bounce">
 
-              {/* Icono de la manito apuntando hacia arriba */}
               <span className="text-xl filter drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)] select-none">
                 👆
               </span>
 
-              {/* Texto de llamado a la acción centrado y brillante */}
               <p className="text-[10px] font-black text-white uppercase tracking-widest bg-black/60 px-2 py-0.5 rounded-md border border-white/20 whitespace-nowrap shadow-md mt-0.5 leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
                 ¡Haz clic para escuchar!
               </p>
@@ -107,8 +159,7 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
 
         </div>
 
-
-        {/* 2. Botón Ver Ubicación Verde */}
+        {/* Botón ubicación */}
         <a
           href="https://maps.app.goo.gl/HFyVXqdHGNCT7cBF8"
           target="_blank"
@@ -118,12 +169,13 @@ export default function ComponenteInvitacionClient({ nombre, regalo1, regalo2, m
         />
 
         <ContadorRegresivo />
-        {/* 3. Botón Confirmar Asistencia Rojo */}
+
+        {/* Botón WhatsApp */}
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-[24.5%] left-[33%] w-[34%] h-[2.5%] rounded-[20px] active:bg-white/40 transition-colors"
+          className="absolute bottom-[22.5%] left-[33%] w-[34%] h-[2.5%] rounded-[20px] active:bg-white/40 transition-colors"
           title="Confirmar por WhatsApp"
         />
 
