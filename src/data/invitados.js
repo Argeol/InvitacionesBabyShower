@@ -203,7 +203,7 @@ export const listaInvitados = {
   },
 
   "leo": {
-    nombre: "Leonilde",
+    nombre: "Leonilde Ramirez",
     regalo1: "Pañales Etapa 3",
     regalo2: "Ropa 9 a 12 meses",
     mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Leonilde.",
@@ -256,5 +256,18 @@ export const listaInvitados = {
     regalo1: "Pañales Etapa 3",
     regalo2: "Aceite Corpora / Crema N.4",
     mensajeConfirmacion: "¡Hola! Confirmamos nuestra asistencia al Baby Shower. Un saludo de Diego Murillo y su esposa.",
+  },
+  "yaneth-sanchez": {
+    nombre: "Yaneth Sanchez Pineda",
+    regalo1: "Pañales Etapa 4",
+    regalo2: "Tetero Antireflujo",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Yaneth Sanchez Pineda.",
+  },
+
+  "jair-sanchez": {
+    nombre: "Jair Sanchez Pineda",
+    regalo1: "Pijamas 3 a 6 Meses",
+    regalo2: "Pañales Etapa 2",
+    mensajeConfirmacion: "¡Hola! Confirmo mi asistencia al Baby Shower. Un saludo de Jair Sanchez Pineda.",
   },
 };
